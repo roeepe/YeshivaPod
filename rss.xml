@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0">
+  <channel>
+    <title>הפודקאסט שלי</title>
+    <link>https://roeepe.github.io/YeshivaPod/</link>
+    <description>פודקאסט שמועלה אוטומטית מיוטיוב לספוטיפיי ולפלטפורמות נוספות.</description>
+    <docs>http://www.rssboard.org/rss-specification</docs>
+    <generator>python-feedgen</generator>
+    <image>
+      <url>https://images.unsplash.com/photo-1593697821252-0c9137d9fc45?w=500&amp;h=500&amp;fit=crop</url>
+      <title>הפודקאסט שלי</title>
+      <link>https://roeepe.github.io/YeshivaPod/</link>
+    </image>
+    <language>he</language>
+    <lastBuildDate>Sun, 19 Jul 2026 14:08:56 +0000</lastBuildDate>
+    <itunes:category text="Education"/>
+    <itunes:explicit>no</itunes:explicit>
+  </channel>
+</rss>
