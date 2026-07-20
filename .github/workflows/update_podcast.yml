@@ -29,6 +29,8 @@ jobs:
           # yt-dlp requires ffmpeg for audio extraction
           sudo apt-get update && sudo apt-get install -y ffmpeg
           pip install --upgrade -r requirements.txt
+          # Use nightly yt-dlp to bypass youtube bot detection
+          pip install -U https://github.com/yt-dlp/yt-dlp/archive/master.tar.gz
 
       - name: Run podcast updater script
         env:
