@@ -28,7 +28,7 @@ jobs:
           python -m pip install --upgrade pip
           # yt-dlp requires ffmpeg for audio extraction
           sudo apt-get update && sudo apt-get install -y ffmpeg
-          pip install -r requirements.txt
+          pip install --upgrade -r requirements.txt
 
       - name: Run podcast updater script
         env:
