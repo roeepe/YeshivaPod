@@ -123,6 +123,10 @@ def generate_rss(config, episodes, output_file):
         
         # Enclosure
         fe.enclosure(ep['audio_url'], str(ep.get('file_size', 0)), 'audio/mpeg')
+
+        # iTunes item image
+        if ep.get('thumbnail'):
+            fe.podcast.itunes_image(ep['thumbnail'])
     
     fg.rss_file(output_file, pretty=True)
     logging.info(f"RSS feed saved to {output_file}")
@@ -173,7 +177,8 @@ def main():
                     'upload_date': details.get('upload_date', datetime.utcnow().strftime('%Y%m%d')),
                     'duration': details.get('duration', 0),
                     'audio_url': audio_url,
-                    'file_size': file_size
+                    'file_size': file_size,
+                    'thumbnail': f"https://i.ytimg.com/vi/{vid}/hqdefault.jpg"
                 }
                 episodes.append(ep_data)
                 save_json('episodes.json', episodes)

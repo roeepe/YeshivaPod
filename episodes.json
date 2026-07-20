@@ -6,7 +6,8 @@
     "upload_date": "20260719",
     "duration": 1835,
     "audio_url": "https://github.com/roeepe/YeshivaPod/releases/download/eCYkIPpyg8o/eCYkIPpyg8o.mp3",
-    "file_size": 44041581
+    "file_size": 44041581,
+    "thumbnail": "https://i.ytimg.com/vi/eCYkIPpyg8o/hqdefault.jpg"
   },
   {
     "id": "Tko-ROVkwok",
@@ -15,7 +16,8 @@
     "upload_date": "20220709",
     "duration": 2350,
     "audio_url": "https://github.com/roeepe/YeshivaPod/releases/download/Tko-ROVkwok/Tko-ROVkwok.mp3",
-    "file_size": 56401965
+    "file_size": 56401965,
+    "thumbnail": "https://i.ytimg.com/vi/Tko-ROVkwok/hqdefault.jpg"
   },
   {
     "id": "y6REV8dWGms",
@@ -24,7 +26,8 @@
     "upload_date": "20250706",
     "duration": 2255,
     "audio_url": "https://github.com/roeepe/YeshivaPod/releases/download/y6REV8dWGms/y6REV8dWGms.mp3",
-    "file_size": 54122157
+    "file_size": 54122157,
+    "thumbnail": "https://i.ytimg.com/vi/y6REV8dWGms/hqdefault.jpg"
   },
   {
     "id": "lk8OkDxRkKM",
@@ -33,7 +36,8 @@
     "upload_date": "20250629",
     "duration": 2550,
     "audio_url": "https://github.com/roeepe/YeshivaPod/releases/download/lk8OkDxRkKM/lk8OkDxRkKM.mp3",
-    "file_size": 61201773
+    "file_size": 61201773,
+    "thumbnail": "https://i.ytimg.com/vi/lk8OkDxRkKM/hqdefault.jpg"
   },
   {
     "id": "HNPPhHpiqaQ",
@@ -42,7 +46,8 @@
     "upload_date": "20250622",
     "duration": 2170,
     "audio_url": "https://github.com/roeepe/YeshivaPod/releases/download/HNPPhHpiqaQ/HNPPhHpiqaQ.mp3",
-    "file_size": 52082541
+    "file_size": 52082541,
+    "thumbnail": "https://i.ytimg.com/vi/HNPPhHpiqaQ/hqdefault.jpg"
   },
   {
     "id": "4D36RjTEHjw",
@@ -51,6 +56,7 @@
     "upload_date": "20250615",
     "duration": 2407,
     "audio_url": "https://github.com/roeepe/YeshivaPod/releases/download/4D36RjTEHjw/4D36RjTEHjw.mp3",
-    "file_size": 57767661
+    "file_size": 57767661,
+    "thumbnail": "https://i.ytimg.com/vi/4D36RjTEHjw/hqdefault.jpg"
   }
 ]

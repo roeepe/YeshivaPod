@@ -1,19 +1,20 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0">
   <channel>
-    <title>הפודקאסט שלי</title>
-    <link>https://roeepe.github.io/YeshivaPod/</link>
-    <description>פודקאסט שמועלה אוטומטית מיוטיוב לספוטיפיי ולפלטפורמות נוספות.</description>
+    <title>בעין טובה - שיחות הרב זלמן מלמד לפרשת השבוע</title>
+    <link>https://username.github.io/repo/</link>
+    <description>שיחות ומאמרים על פרשת השבוע מאת הרב זלמן ברוך מלמד שליט"א, ראש ישיבת בית אל ואתר ישיבה. עכשיו זמין להאזנה גם כפודקאסט.</description>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>python-feedgen</generator>
     <image>
-      <url>https://images.unsplash.com/photo-1593697821252-0c9137d9fc45?w=500&amp;h=500&amp;fit=crop</url>
-      <title>הפודקאסט שלי</title>
-      <link>https://roeepe.github.io/YeshivaPod/</link>
+      <url>https://roeepe.github.io/YeshivaPod/podcast_cover.png</url>
+      <title>בעין טובה - שיחות הרב זלמן מלמד לפרשת השבוע</title>
+      <link>https://username.github.io/repo/</link>
     </image>
     <language>he</language>
-    <lastBuildDate>Sun, 19 Jul 2026 15:09:55 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 20 Jul 2026 06:58:51 +0000</lastBuildDate>
     <itunes:category text="Education"/>
+    <itunes:image href="https://roeepe.github.io/YeshivaPod/podcast_cover.png"/>
     <itunes:explicit>no</itunes:explicit>
     <item>
       <title>למה הגאולה נקנית בייסורים? שיחה לפרשת בהעלותך | הרב זלמן ברוך מלמד שליט"א</title>
@@ -29,6 +30,7 @@
       <guid isPermaLink="false">4D36RjTEHjw</guid>
       <enclosure url="https://github.com/roeepe/YeshivaPod/releases/download/4D36RjTEHjw/4D36RjTEHjw.mp3" length="57767661" type="audio/mpeg"/>
       <pubDate>Sun, 15 Jun 2025 00:00:00 +0000</pubDate>
+      <itunes:image href="https://i.ytimg.com/vi/4D36RjTEHjw/hqdefault.jpg"/>
     </item>
     <item>
       <title>שיחת מוצ"ש לפרשת שלח - להסתכל על המציאות בעיניים של אמונה | הרה"ג זלמן ברוך מלמד שליט"א</title>
@@ -51,6 +53,7 @@
       <guid isPermaLink="false">HNPPhHpiqaQ</guid>
       <enclosure url="https://github.com/roeepe/YeshivaPod/releases/download/HNPPhHpiqaQ/HNPPhHpiqaQ.mp3" length="52082541" type="audio/mpeg"/>
       <pubDate>Sun, 22 Jun 2025 00:00:00 +0000</pubDate>
+      <itunes:image href="https://i.ytimg.com/vi/HNPPhHpiqaQ/hqdefault.jpg"/>
     </item>
     <item>
       <title>שיחה לפרשת קרח: איך משלבים שכל ישר ויראת שמיים? | הרה"ג זלמן ברוך מלמד שליט"א</title>
@@ -78,6 +81,7 @@
       <guid isPermaLink="false">lk8OkDxRkKM</guid>
       <enclosure url="https://github.com/roeepe/YeshivaPod/releases/download/lk8OkDxRkKM/lk8OkDxRkKM.mp3" length="61201773" type="audio/mpeg"/>
       <pubDate>Sun, 29 Jun 2025 00:00:00 +0000</pubDate>
+      <itunes:image href="https://i.ytimg.com/vi/lk8OkDxRkKM/hqdefault.jpg"/>
     </item>
     <item>
       <title>שיחה לפרשת חקת | האות המיוחדת שלך בתורה ובחיים - הרב זלמן ברוך מלמד שליט"א</title>
@@ -109,6 +113,7 @@
       <guid isPermaLink="false">y6REV8dWGms</guid>
       <enclosure url="https://github.com/roeepe/YeshivaPod/releases/download/y6REV8dWGms/y6REV8dWGms.mp3" length="54122157" type="audio/mpeg"/>
       <pubDate>Sun, 06 Jul 2025 00:00:00 +0000</pubDate>
+      <itunes:image href="https://i.ytimg.com/vi/y6REV8dWGms/hqdefault.jpg"/>
     </item>
     <item>
       <title>שיחה לפרשת בלק: איך זכה בלעם הרשע לברך יותר טוב?</title>
@@ -124,6 +129,7 @@
       <guid isPermaLink="false">Tko-ROVkwok</guid>
       <enclosure url="https://github.com/roeepe/YeshivaPod/releases/download/Tko-ROVkwok/Tko-ROVkwok.mp3" length="56401965" type="audio/mpeg"/>
       <pubDate>Sat, 09 Jul 2022 00:00:00 +0000</pubDate>
+      <itunes:image href="https://i.ytimg.com/vi/Tko-ROVkwok/hqdefault.jpg"/>
     </item>
     <item>
       <title>החורבן הוא הפתח לגאולה? שיחה מיוחדת מהעיר העתיקה | שבת חזון תשפ"ו | הרה"ג זלמן ברוך מלמד שליט"א</title>
@@ -146,6 +152,7 @@
       <guid isPermaLink="false">eCYkIPpyg8o</guid>
       <enclosure url="https://github.com/roeepe/YeshivaPod/releases/download/eCYkIPpyg8o/eCYkIPpyg8o.mp3" length="44041581" type="audio/mpeg"/>
       <pubDate>Sun, 19 Jul 2026 00:00:00 +0000</pubDate>
+      <itunes:image href="https://i.ytimg.com/vi/eCYkIPpyg8o/hqdefault.jpg"/>
     </item>
   </channel>
 </rss>
