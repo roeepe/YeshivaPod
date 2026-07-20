@@ -174,7 +174,7 @@ def main():
                     'id': vid,
                     'title': details.get('title', 'Unknown Title'),
                     'description': details.get('description', ''),
-                    'upload_date': details.get('upload_date', datetime.utcnow().strftime('%Y%m%d')),
+                    'upload_date': datetime.utcnow().strftime('%Y%m%d'),
                     'duration': details.get('duration', 0),
                     'audio_url': audio_url,
                     'file_size': file_size,
