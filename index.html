@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>פודקאסט אתר ישיבה | Yeshiva.org.il Podcast</title>
-    <meta name="description" content="הפודקאסט הרשמי של אתר ישיבה. כל השיעורים וההרצאות זמינים להאזנה בכל זמן ובכל מקום.">
+    <title>בעין טובה - שיחות הרב זלמן מלמד לפרשת השבוע</title>
+    <meta name="description" content="שיחות ומאמרים על פרשת השבוע מאת הרב זלמן ברוך מלמד שליט&quot;א, עכשיו זמין להאזנה גם כפודקאסט.">
     <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;600;800&family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -68,15 +68,29 @@
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1000px;
             margin: 0 auto;
             padding: 40px 20px;
             flex-grow: 1;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-            text-align: center;
+        }
+
+        /* Top Logo */
+        .top-logo {
+            margin-bottom: 20px;
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 10px 20px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .top-logo img {
+            max-height: 40px;
+            width: auto;
+            display: block;
         }
 
         /* Glassmorphism Card */
@@ -86,48 +100,49 @@
             -webkit-backdrop-filter: blur(16px);
             border: 1px solid var(--surface-border);
             border-radius: 24px;
-            padding: 60px 40px;
-            max-width: 800px;
+            padding: 50px 40px;
             width: 100%;
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            text-align: center;
             position: relative;
             z-index: 10;
+            margin-bottom: 60px;
         }
 
-        .glass-card:hover {
-            transform: translateY(-5px);
-            border-color: rgba(255, 255, 255, 0.2);
-        }
-
-        /* Logo & Header */
-        .logo-container {
+        /* Podcast Cover */
+        .podcast-cover-container {
             margin-bottom: 30px;
-            display: inline-block;
-            background: rgba(255, 255, 255, 0.9);
-            padding: 15px 30px;
-            border-radius: 20px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
         }
 
-        .logo-img {
-            max-height: 80px;
-            width: auto;
-            object-fit: contain;
+        .podcast-cover {
+            width: 200px;
+            height: 200px;
+            border-radius: 20px;
+            object-fit: cover;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+            border: 2px solid rgba(255,255,255,0.1);
         }
 
         .title {
-            font-size: 3.5rem;
+            font-size: 3rem;
             font-weight: 800;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
             background: linear-gradient(135deg, #fff 0%, #a5cbf0 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             letter-spacing: -1px;
+            line-height: 1.2;
         }
 
         .subtitle {
-            font-size: 1.25rem;
+            font-size: 1.3rem;
+            color: var(--secondary);
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .desc {
+            font-size: 1.1rem;
             color: var(--text-secondary);
             margin-bottom: 40px;
             line-height: 1.8;
@@ -142,7 +157,7 @@
             flex-wrap: wrap;
             gap: 20px;
             justify-content: center;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
         }
 
         .btn {
@@ -184,44 +199,96 @@
 
         /* Podcast Platforms (Hidden for now) */
         .platforms-section {
-            display: none; /* User requested to hide these blocks for now */
+            display: none;
             margin-top: 40px;
             padding-top: 30px;
             border-top: 1px solid var(--surface-border);
         }
 
-        .platforms-title {
-            font-size: 1rem;
-            color: var(--text-secondary);
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
+        /* Episodes Section */
+        .episodes-section {
+            width: 100%;
+            z-index: 10;
         }
 
-        .platforms-grid {
+        .episodes-section-title {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            color: var(--text-primary);
+            font-weight: 800;
+        }
+
+        .episodes-list {
             display: flex;
-            gap: 15px;
-            justify-content: center;
-            flex-wrap: wrap;
+            flex-direction: column;
+            gap: 20px;
         }
 
-        .platform-card {
-            background: rgba(255, 255, 255, 0.03);
+        .episode-card {
+            background: var(--surface);
             border: 1px solid var(--surface-border);
             border-radius: 16px;
-            padding: 15px 25px;
+            padding: 20px;
             display: flex;
-            align-items: center;
-            gap: 12px;
-            color: white;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            font-weight: 600;
+            gap: 24px;
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease;
+            align-items: stretch;
         }
 
-        .platform-card:hover {
+        .episode-card:hover {
+            transform: translateY(-3px);
             background: rgba(255, 255, 255, 0.08);
-            transform: translateY(-2px);
+        }
+
+        .episode-thumb {
+            width: 200px;
+            height: 112px;
+            object-fit: cover;
+            border-radius: 10px;
+            flex-shrink: 0;
+            background: #000;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        .episode-info {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            text-align: right;
+        }
+
+        .episode-title {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--primary-light);
+            font-weight: 600;
+            line-height: 1.3;
+        }
+
+        .episode-desc {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            margin-bottom: 15px;
+            line-height: 1.5;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .episode-audio {
+            width: 100%;
+            height: 40px;
+            margin-top: auto;
+            border-radius: 8px;
+        }
+
+        .loading-text {
+            color: var(--text-secondary);
+            text-align: center;
+            font-size: 1.1rem;
+            padding: 40px;
         }
 
         /* SVG Icons */
@@ -239,6 +306,7 @@
             border-top: 1px solid rgba(255, 255, 255, 0.05);
             font-size: 0.9rem;
             z-index: 10;
+            margin-top: 60px;
         }
 
         footer a {
@@ -253,10 +321,12 @@
 
         /* Responsive */
         @media (max-width: 768px) {
-            .title { font-size: 2.5rem; }
+            .title { font-size: 2.2rem; }
             .glass-card { padding: 40px 20px; }
             .actions { flex-direction: column; }
             .btn { width: 100%; justify-content: center; }
+            .episode-card { flex-direction: column; }
+            .episode-thumb { width: 100%; height: auto; aspect-ratio: 16/9; }
         }
     </style>
 </head>
@@ -266,16 +336,22 @@
     <div class="bg-glow-2"></div>
 
     <main class="container">
+        
+        <a href="https://www.yeshiva.org.il/" target="_blank" class="top-logo">
+            <img src="yeshivaLogo.png" alt="אתר ישיבה - Logo" onerror="this.src='https://www.yeshiva.org.il/images/logo.png'">
+        </a>
+
         <div class="glass-card">
             
-            <div class="logo-container">
-                <img src="yeshivaLogo.png" alt="אתר ישיבה - Logo" class="logo-img" onerror="this.src='https://www.yeshiva.org.il/images/logo.png'">
+            <div class="podcast-cover-container">
+                <img src="podcast_cover.png" alt="בעין טובה פודקאסט" class="podcast-cover" onerror="this.src='yeshivaLogo.png'">
             </div>
 
-            <h1 class="title">הפודקאסט של אתר ישיבה</h1>
+            <h1 class="title">בעין טובה</h1>
+            <h2 class="subtitle">שיחות הרב זלמן מלמד לפרשת השבוע - עכשיו כפודקאסט!</h2>
             
-            <p class="subtitle">
-                כל השיעורים, ההרצאות והשיחות של רבני אתר ישיבה, עכשיו זמינים להאזנה בכל פלטפורמות הפודקאסטים המובילות. התחברו לתוכן תורני איכותי בכל זמן ובכל מקום.
+            <p class="desc">
+                שיחות ומאמרים על פרשת השבוע מאת הרב זלמן ברוך מלמד שליט"א, ראש ישיבת בית אל ואתר ישיבה. האזינו לבירורים העמוקים והמחזקים בכל זמן ובכל מקום.
             </p>
 
             <div class="actions">
@@ -290,25 +366,23 @@
                     <svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
                     </svg>
-                    ערוץ היוטיוב שלנו
+                    ערוץ היוטיוב
                 </a>
             </div>
 
             <!-- Future Platform Links Section -->
             <div class="platforms-section" id="platforms">
-                <h3 class="platforms-title">האזינו עכשיו ב:</h3>
-                <div class="platforms-grid">
-                    <a href="#" class="platform-card">
-                        <svg class="icon" style="color: #1DB954;" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.54.659.301 1.02zm1.44-3.3c-.301.42-.84.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.84.241 1.2zM20.16 9.6C16.44 7.38 9.54 7.14 5.58 8.4c-.6.18-1.2-.18-1.38-.72-.18-.6.18-1.2.72-1.38 4.68-1.44 12.24-1.14 16.62 1.5.54.3 0.72 1.02.42 1.56-.24.54-.96.72-1.5.42z"/></svg>
-                        Spotify
-                    </a>
-                    <a href="#" class="platform-card">
-                        <svg class="icon" style="color: #AA66CC;" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm.014 5.086c1.393 0 2.536 1.137 2.536 2.522 0 1.385-1.143 2.52-2.536 2.52-1.4 0-2.544-1.135-2.544-2.52 0-1.385 1.143-2.522 2.544-2.522zM8.307 19c-1.325 0-2.408-1.076-2.408-2.394 0-1.319 1.083-2.396 2.408-2.396 1.332 0 2.416 1.077 2.416 2.396 0 1.318-1.084 2.394-2.416 2.394zm7.386 0c-1.326 0-2.41-1.076-2.41-2.394 0-1.319 1.084-2.396 2.41-2.396 1.33 0 2.414 1.077 2.414 2.396 0 1.318-1.084 2.394-2.414 2.394z"/></svg>
-                        Apple Podcasts
-                    </a>
-                </div>
+                <!-- Content remains but is hidden by CSS display: none -->
             </div>
 
+        </div>
+
+        <!-- Episodes Section -->
+        <div class="episodes-section">
+            <h2 class="episodes-section-title">הפרקים שלנו</h2>
+            <div class="episodes-list" id="episodes-list">
+                <div class="loading-text">טוען פרקים...</div>
+            </div>
         </div>
     </main>
 
@@ -333,6 +407,35 @@
                 }, 2000);
             });
         });
+
+        // Fetch and display episodes
+        fetch('episodes.json')
+            .then(res => res.json())
+            .then(episodes => {
+                const list = document.getElementById('episodes-list');
+                if(!episodes || episodes.length === 0) {
+                    list.innerHTML = '<div class="loading-text">אין פרקים כרגע.</div>';
+                    return;
+                }
+                
+                // Sort episodes by upload_date descending (newest first)
+                episodes.sort((a, b) => b.upload_date.localeCompare(a.upload_date));
+                
+                list.innerHTML = episodes.map(ep => `
+                    <div class="episode-card">
+                        <img src="${ep.thumbnail || 'podcast_cover.png'}" alt="${ep.title.replace(/"/g, '&quot;')}" class="episode-thumb" onerror="this.src='podcast_cover.png'">
+                        <div class="episode-info">
+                            <h3 class="episode-title">${ep.title}</h3>
+                            <p class="episode-desc">${(ep.description || '').substring(0, 200)}...</p>
+                            <audio controls src="${ep.audio_url}" class="episode-audio"></audio>
+                        </div>
+                    </div>
+                `).join('');
+            })
+            .catch(err => {
+                console.error('Error fetching episodes:', err);
+                document.getElementById('episodes-list').innerHTML = '<div class="loading-text">שגיאה בטעינת הפרקים.</div>';
+            });
     </script>
 </body>
 </html>
