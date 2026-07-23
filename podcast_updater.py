@@ -123,8 +123,13 @@ def generate_rss(config, episodes, output_file):
         upload_date = upload_date.replace(tzinfo=pytz.UTC)
         fe.published(upload_date)
         
+        # Podtrac Prefix for analytics
+        audio_url_for_rss = ep['audio_url']
+        if audio_url_for_rss.startswith('https://'):
+            audio_url_for_rss = 'https://dts.podtrac.com/redirect.mp3/' + audio_url_for_rss[8:]
+        
         # Enclosure
-        fe.enclosure(ep['audio_url'], str(ep.get('file_size', 0)), 'audio/mpeg')
+        fe.enclosure(audio_url_for_rss, str(ep.get('file_size', 0)), 'audio/mpeg')
 
         # iTunes item image
         if ep.get('thumbnail'):

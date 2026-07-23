@@ -422,15 +422,43 @@
                 episodes.sort((a, b) => b.upload_date.localeCompare(a.upload_date));
                 
                 list.innerHTML = episodes.map(ep => `
-                    <div class="episode-card">
+                    <div class="episode-card" data-id="${ep.id}">
                         <img src="${ep.thumbnail || 'podcast_cover.png'}" alt="${ep.title.replace(/"/g, '&quot;')}" class="episode-thumb" onerror="this.src='podcast_cover.png'">
                         <div class="episode-info">
                             <h3 class="episode-title">${ep.title}</h3>
                             <p class="episode-desc">${(ep.description || '').substring(0, 200)}...</p>
                             <audio controls src="${ep.audio_url}" class="episode-audio"></audio>
+                            <div class="episode-stats" style="margin-top: 10px; font-size: 0.9rem; color: var(--text-secondary);">
+                                <svg class="icon" viewBox="0 0 24 24" style="width: 16px; height: 16px; vertical-align: middle; margin-left: 5px;" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
+                                </svg>
+                                <span class="download-count">טוען הורדות...</span>
+                            </div>
                         </div>
                     </div>
                 `).join('');
+                
+                // Fetch download counts from GitHub Releases
+                fetch('https://api.github.com/repos/roeepe/YeshivaPod/releases')
+                    .then(r => r.json())
+                    .then(releases => {
+                        const downloads = {};
+                        releases.forEach(rel => {
+                            if (rel.assets && rel.assets.length > 0) {
+                                downloads[rel.tag_name] = rel.assets[0].download_count;
+                            }
+                        });
+                        document.querySelectorAll('.episode-card').forEach(card => {
+                            const id = card.getAttribute('data-id');
+                            const countSpan = card.querySelector('.download-count');
+                            if (downloads[id] !== undefined) {
+                                countSpan.textContent = downloads[id] + ' הורדות ישירות מגיטהאב';
+                            } else {
+                                countSpan.textContent = '0 הורדות ישירות מגיטהאב';
+                            }
+                        });
+                    })
+                    .catch(e => console.error('Error fetching stats:', e));
             })
             .catch(err => {
                 console.error('Error fetching episodes:', err);
