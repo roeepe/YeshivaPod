@@ -186,7 +186,7 @@ def main():
                 ep_data = {
                     'id': vid,
                     'title': details.get('title', 'Unknown Title'),
-                    'description': details.get('description', ''),
+                    'description': f"לצפייה בסרטון המקורי ביוטיוב: https://www.youtube.com/watch?v={vid}\n\n" + details.get('description', ''),
                     'upload_date': datetime.utcnow().strftime('%Y%m%d'),
                     'duration': details.get('duration', 0),
                     'audio_url': audio_url,
