@@ -25,7 +25,7 @@ def save_json(filepath, data):
 
 def get_playlist_videos(playlist_url):
     logging.info(f"Fetching playlist info from: {playlist_url}")
-    cmd = ['python', '-m', 'yt_dlp', '--flat-playlist', '--dump-json', playlist_url]
+    cmd = ['python', '-m', 'yt_dlp', '--extractor-args', 'youtube:player_client=android', '--flat-playlist', '--dump-json', playlist_url]
     result = subprocess.run(cmd, capture_output=True, text=True)
     if result.returncode != 0:
         logging.error(f"yt-dlp error: {result.stderr}")
@@ -39,7 +39,7 @@ def get_playlist_videos(playlist_url):
 
 def get_video_details(video_url):
     logging.info(f"Fetching details for {video_url}")
-    cmd = ['python', '-m', 'yt_dlp', '--dump-json', video_url]
+    cmd = ['python', '-m', 'yt_dlp', '--extractor-args', 'youtube:player_client=android', '--dump-json', video_url]
     result = subprocess.run(cmd, capture_output=True, text=True)
     if result.returncode != 0:
         logging.error(f"Error fetching details: {result.stderr}")
@@ -50,6 +50,7 @@ def download_audio(video_url, output_filename):
     logging.info(f"Downloading audio for {video_url}...")
     cmd = [
         'python', '-m', 'yt_dlp',
+        '--extractor-args', 'youtube:player_client=android',
         '-x', 
         '--audio-format', 'mp3',
         '--audio-quality', '192K',
