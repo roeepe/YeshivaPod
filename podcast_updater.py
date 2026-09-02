@@ -25,9 +25,9 @@ def save_json(filepath, data):
         json.dump(data, f, ensure_ascii=False, indent=2)
 
 def get_client_args():
-    for p in ['cookies.txt', '../cookies.txt', '/home/builder/podcasts/cookies.txt', '/home/builder/shorts/secrets/youtube_cookies.txt']:
-        if os.path.exists(p):
-            return ['--cookies', p]
+    global_cookies = '/home/builder/shorts/secrets/youtube_cookies.txt'
+    if os.path.exists(global_cookies):
+        return ['--cookies', global_cookies]
     return ['--extractor-args', 'youtube:player_client=android']
 
 def get_playlist_videos(playlist_url):
