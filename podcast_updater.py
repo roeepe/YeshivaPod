@@ -58,9 +58,9 @@ def download_audio(video_url, output_filename):
     cmd = [
         sys.executable, '-m', 'yt_dlp',
     ] + get_client_args() + [
-        '-x', 
-        '--audio-format', 'mp3',
-        '--audio-quality', '192K',
+        '--ffmpeg-location', '/home/builder/shorts/bin',
+        '-x', '--audio-format', 'mp3',
+        '--audio-quality', '4',
         '-o', output_filename,
         video_url
     ]
