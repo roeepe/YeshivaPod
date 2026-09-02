@@ -23,15 +23,15 @@ def save_json(filepath, data):
     with open(filepath, 'w', encoding='utf-8') as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
 
-def get_cookies_arg():
+def get_client_args():
     for p in ['cookies.txt', '../cookies.txt', '/home/builder/podcasts/cookies.txt']:
         if os.path.exists(p):
             return ['--cookies', p]
-    return []
+    return ['--extractor-args', 'youtube:player_client=android']
 
 def get_playlist_videos(playlist_url):
     logging.info(f"Fetching playlist info from: {playlist_url}")
-    cmd = ['python', '-m', 'yt_dlp', '--extractor-args', 'youtube:player_client=android'] + get_cookies_arg() + ['--flat-playlist', '--dump-json', playlist_url]
+    cmd = ['python', '-m', 'yt_dlp'] + get_client_args() + ['--flat-playlist', '--dump-json', playlist_url]
     result = subprocess.run(cmd, capture_output=True, text=True)
     if result.returncode != 0:
         logging.error(f"yt-dlp error: {result.stderr}")
@@ -45,7 +45,7 @@ def get_playlist_videos(playlist_url):
 
 def get_video_details(video_url):
     logging.info(f"Fetching details for {video_url}")
-    cmd = ['python', '-m', 'yt_dlp', '--extractor-args', 'youtube:player_client=android'] + get_cookies_arg() + ['--dump-json', video_url]
+    cmd = ['python', '-m', 'yt_dlp'] + get_client_args() + ['--dump-json', video_url]
     result = subprocess.run(cmd, capture_output=True, text=True)
     if result.returncode != 0:
         logging.error(f"Error fetching details: {result.stderr}")
@@ -56,8 +56,7 @@ def download_audio(video_url, output_filename):
     logging.info(f"Downloading audio for {video_url}...")
     cmd = [
         'python', '-m', 'yt_dlp',
-        '--extractor-args', 'youtube:player_client=android',
-    ] + get_cookies_arg() + [
+    ] + get_client_args() + [
         '-x', 
         '--audio-format', 'mp3',
         '--audio-quality', '192K',
