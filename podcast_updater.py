@@ -188,7 +188,9 @@ def main():
             audio_url = ""
             
             if github_token and github_repo:
-                audio_url = upload_to_github_release(github_token, github_repo, vid, mp3_filename)
+                # A git tag cannot start with "-", and YouTube IDs sometimes do.
+                tag_name = f"ep{vid}" if vid.startswith("-") else vid
+                audio_url = upload_to_github_release(github_token, github_repo, tag_name, mp3_filename)
                 
             if audio_url:
                 ep_data = {
