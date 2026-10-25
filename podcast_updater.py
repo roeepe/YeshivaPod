@@ -154,6 +154,9 @@ def main():
         
     episodes = load_json('episodes.json', [])
     processed_ids = {ep['id'] for ep in episodes}
+    # An audio-only episode (add_audio_episode.py) may later get a video in the
+    # playlist. Its YouTube ID is listed under 'aliases' so it isn't added twice.
+    processed_ids |= {a for ep in episodes for a in ep.get('aliases', [])}
     
     github_token = os.environ.get('GITHUB_TOKEN')
     github_repo = os.environ.get('GITHUB_REPOSITORY')
